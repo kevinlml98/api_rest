@@ -41,8 +41,21 @@
 			<form action="auth" method="POST">
 				<input type="text" name="username" placeholder="Username" required>
 				<input type="password" name="password" placeholder="Password" required>
-				<input type="submit">
+				<input type="submit" onkeyup="callREST()">
 			</form>
 		</div>
+		<div id="response"></div>
+		<script>
+			function callREST() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("response").innerHTML = this.responseText;
+					}
+				};
+				xhttp.open("GET", 'http://localhost:4000/', true);
+				xhttp.send();
+			}
+		</script>
 	</body>
 </html>
