@@ -1,5 +1,5 @@
 create database usersdb;
-use userdb;
+use usersdb;
 
 create table USERS(
 US_ID int not null auto_increment primary key,
