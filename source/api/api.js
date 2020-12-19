@@ -36,7 +36,7 @@ router.delete('/:id', (req, res) => {
   });
 });
 
-// INSERT An User
+// Post An User
 router.post('/', (req, res) => {
   const {name, password} = req.body;
   console.log(name, password);
